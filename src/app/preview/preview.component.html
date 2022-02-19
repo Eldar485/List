@@ -1,0 +1,20 @@
+<div class="preview">
+  <div class="pageButtons">
+    <a routerLink="/Editor"><button class="pageButton">Editor</button></a>
+    <a routerLink="/Preview"><button class="pageButton">Preview</button></a>
+  </div>
+  <div class="functions">
+    <div class="functions__list">
+      <div class="header">
+        <div (click)="sortingName()">Name</div>
+        <div (click)="sortingDate()">Date</div>
+      </div>
+      <div class="item">
+        <app-item (setUp)="setUp($event)" (setDown)="setDown($event)" [page]="1" *ngFor="let oneItem of items$ | async; let idx  = index"
+                [item]="oneItem"
+                [index] = idx>
+        </app-item>
+      </div>
+    </div>
+  </div>
+</div>

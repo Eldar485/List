@@ -1,0 +1,19 @@
+<div class="item" (click)="show = false">
+  <div class="item__name">{{item.name}}</div>
+  <div class="item__container">
+    <div class="item_date">{{item.date | date: 'dd.MM.yy  HH:mm'}} </div>
+    <div *ngIf="!page" class="buttons">
+      <button (click)="copyItem()" class="item__copy"><img src="/assets/images/copy.png"/></button>
+      <button (click)="deleteItem()" class="item_delete"><img src="/assets/images/delete.png"/></button>
+    </div>
+    <div *ngIf="page" class="buttons">
+      <button (click)="menu.show()"><img src="/assets/images/dots.png"/></button>
+      <app-drop-menu #menu>
+        <div>
+          <button (click)="up()" class="item_delete">Вверх</button>
+          <button (click)="down()" class="item_delete">Вниз</button>
+        </div>
+      </app-drop-menu>
+    </div>
+  </div>
+</div>

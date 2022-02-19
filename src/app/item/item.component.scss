@@ -1,0 +1,24 @@
+.item{
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  &__container{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    img{
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+}
+
+

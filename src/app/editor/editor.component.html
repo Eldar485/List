@@ -1,0 +1,22 @@
+<div class="editor">
+  <div class="pageButtons">
+    <a routerLink="/Editor"><button class="pageButton">Editor</button></a>
+    <a routerLink="/Preview"><button class="pageButton">Preview</button></a>
+  </div>
+  <div class="functions">
+    <div class="functions__add">
+      <input placeholder="Enter item name" type="text" [(ngModel)]="itemText"/>
+      <button (click)="addNewItem()">Add</button>
+    </div>
+    <div class="functions__list">
+      <div class="header">
+        <div (click)="sortingName()">Name</div>
+        <div (click)="sortingDate()">Date</div>
+      </div>
+      <div class="item">
+        <app-item [page]="0" (delete)="deleteItem($event)" (copy)="copyItem($event)" *ngFor="let oneItem of items$ | async"
+        [item]="oneItem"></app-item>
+      </div>
+    </div>
+  </div>
+</div>
